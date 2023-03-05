@@ -1,6 +1,6 @@
 import bannerTwo from "@/data/bannerTwo";
 import React from "react";
-import BackgroundSlider from "react-background-slider";
+// import BackgroundSlider from "react-background-slider";
 import { Col, Container, Row } from "react-bootstrap";
 import TourSearchForm from "../TourSearchForm/TourSearchForm";
 

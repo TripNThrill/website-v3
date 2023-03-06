@@ -1,4 +1,4 @@
-# tevily-nextjs
+# TripNThrill-nextjs
 
 #To start this Web Application
 

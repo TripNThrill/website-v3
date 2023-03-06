@@ -12,9 +12,8 @@ const MobileMenu = () => {
 
   return (
     <div
-      className={`mobile-nav__wrapper  animated fadeInLeft${
-        menuStatus ? " expanded" : ""
-      }`}
+      className={`mobile-nav__wrapper  animated fadeInLeft${menuStatus ? " expanded" : ""
+        }`}
     >
       <div
         onClick={() => toggleMenu()}
@@ -46,7 +45,7 @@ const MobileMenu = () => {
         <ul className="mobile-nav__contact list-unstyled">
           <li>
             <i className="fa fa-envelope"></i>
-            <a href="mailto:needhelp@packageName__.com">needhelp@tevily.com</a>
+            <a href="mailto:needhelp@packageName__.com">needhelp@TripNThrill.com</a>
           </li>
           <li>
             <i className="fa fa-phone-alt"></i>

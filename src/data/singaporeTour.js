@@ -1,4 +1,4 @@
-import bg1 from "@/images/backgrounds/singapore-tour-bg.jpg";
+import bg1 from "@/images/backgrounds/indian-tour-bg.jpg";
 import bg2 from "@/images/shapes/singapore-tour-right-shape.png";
 
 const singaporeTour = {

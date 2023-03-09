@@ -12,7 +12,7 @@ import React from "react";
 const About = () => {
   return (
     <Layout pageTitle="About">
-      <PageHeader title="About" outerPage="Pages" />
+      <PageHeader title="YOUR TRIP STARTS WITH US" outerPage="Pages" />
       <AboutPage />
       <BookNow />
       <TestimonialOne aboutPage />

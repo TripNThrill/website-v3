@@ -6,7 +6,7 @@ const aboutPage = {
   title: "Dare to Explore with TripNThrill Agency",
   text1: "A Simply Perfect Place to Get Lost",
   text2:
-    "We are trusted by our clients and have a reputation for the best services in the field. Lorem ipsum is simply free text dolor sit amett consectetur adipiscing elit. It is a long established fact that a reader will be distracted by the readable content of a page.",
+    "We are a team of travel enthusiasts who are passionate about exploring the world and helping others do the same. We have a wealth of experience in the travel industry and have curated a wide range of trips that cater to all types of travelers.",
   progress: [
     {
       id: 1,

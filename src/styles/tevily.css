@@ -1393,7 +1393,7 @@ ul {
   transition: -webkit-transform 7000ms ease;
   transition: transform 7000ms ease;
   transition: transform 7000ms ease, -webkit-transform 7000ms ease;
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 .main-slider .image-layer-overlay {
@@ -1720,7 +1720,9 @@ ul {
 }
 
 .tour-search-one__input-box
-  input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]),
+  input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not(
+    [type="reset"]
+  ),
 .tour-search-one__input-box textarea {
   border: none;
   outline: none;
@@ -1764,7 +1766,9 @@ ul {
 }
 
 .tour-search-one__input-box
-  .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+  .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(
+    .input-group-btn
+  ) {
   width: 100%;
 }
 
@@ -5442,7 +5446,9 @@ ul {
 }
 
 .tours-list__sidebar-input
-  .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+  .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(
+    .input-group-btn
+  ) {
   width: 100%;
 }
 
@@ -5688,7 +5694,8 @@ ul {
 .tours-list__img {
   position: relative;
   display: block;
-  max-width: 270px;
+  max-width: 345px;
+  max-height: 230px;
   width: 100%;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -5696,6 +5703,7 @@ ul {
 }
 
 .tours-list__img img {
+  /* object-fit: fill; */
   width: 100%;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -5710,11 +5718,11 @@ ul {
     -webkit-transform 500ms ease;
 }
 
-.tours-list__single:hover .tours-list__img img {
+/* .tours-list__single:hover .tours-list__img img {
   opacity: 1;
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
-}
+} */
 
 .tours-list__icon a {
   width: 38px;
@@ -5806,15 +5814,16 @@ ul {
 .tours-list__meta {
   position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  /* align-items: center; */
   background-color: #faf5ee;
   border-radius: var(--thm-border-radius);
-  padding: 0 40px 0;
+  padding: 0 10px 0;
 }
 
-.tours-list__meta li + li {
+/* .tours-list__meta li + li {
   margin-left: 50px;
-}
+} */
 
 .tours-list__meta li a {
   font-size: 12px;
@@ -6737,7 +6746,9 @@ ul {
 }
 
 .tour-details-two__sidebar-form-input
-  .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+  .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(
+    .input-group-btn
+  ) {
   width: 100%;
 }
 

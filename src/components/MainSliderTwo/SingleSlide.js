@@ -10,7 +10,7 @@ const SingleSlide = ({ slide = {} }) => {
       <div
         className="image-layer"
         style={{
-          backgroundImage: `url(${bg.src})`,
+          backgroundImage: bg ? `url(${bg})` : "",
         }}
       ></div>
       <Container>

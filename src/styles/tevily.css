@@ -126,7 +126,7 @@ ul {
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
   border: none;
   outline: none !important;
   background-color: var(--thm-primary);
@@ -5758,7 +5758,7 @@ ul {
   border-left: 0;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  padding-top: 41px;
+  /* padding-top: 41px; */
 }
 
 .tours-list__stars {
@@ -5818,7 +5818,7 @@ ul {
   /* align-items: center; */
   background-color: #faf5ee;
   border-radius: var(--thm-border-radius);
-  padding: 0 10px 0;
+  padding: 0 40px 0;
 }
 
 /* .tours-list__meta li + li {

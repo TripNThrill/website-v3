@@ -7,8 +7,6 @@ const { getToken } = token;
 
 const TourDetailsOne = (id) => {
 
-  console.log(id.id);
-
   var myHeaders = new Headers();
   myHeaders.append("Authorization", getToken);
 
@@ -21,11 +19,14 @@ const TourDetailsOne = (id) => {
   const [places, setPlaces] = useState({});
 
   useEffect(() => {
-    fetch("https://6wv6aciiid.execute-api.ap-south-1.amazonaws.com/dev_v1/tourist/package_list/", requestOptions)
-      .then((responce) => responce.json())
-      .then((data) => {
-        setPlaces(data.results.filter((result) => result.id == id.id)[0])
-      });
+    if (id.id === undefined) { }
+    else {
+      fetch("https://6wv6aciiid.execute-api.ap-south-1.amazonaws.com/dev_v1/tourist/package_details/" + id.id, requestOptions)
+        .then((responce) => responce.json())
+        .then((data) => {
+          setPlaces(data)
+        });
+    }
   }, [id]);
 
   return (
@@ -58,8 +59,8 @@ const TourDetailsOne = (id) => {
                         <span className="icon-user"></span>
                       </div>
                       <div className="text">
-                        <p>Offers</p>
-                        <h6>{places?.n_offers}</h6>
+                        <p>Seats</p>
+                        <h6>{places?.nseats_total}</h6>
                       </div>
                     </li>
                     <li>
@@ -99,7 +100,8 @@ const TourDetailsOne = (id) => {
                         <span className="icon-clock"></span>
                       </div>
                       <div className="text">
-                        <p>Posted Posted 2 days ago</p>
+                        {/* <p>Posted Posted 2 days ago</p> */}
+                        <p>{places.updated_at}</p>
                       </div>
                     </li>
                     <li>

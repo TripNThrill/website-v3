@@ -31,21 +31,27 @@ const MainSliderTwo = (id) => {
     redirect: 'follow'
   };
 
-  const [places, setPlaces] = useState({});
+  const [places, setPlaces] = useState([]);
 
   useEffect(() => {
-    fetch("https://6wv6aciiid.execute-api.ap-south-1.amazonaws.com/dev_v1/tourist/package_list/", requestOptions)
-      .then((responce) => responce.json())
-      .then((data) => {
-        setPlaces(data.results.filter((result) => result.id == id.id)[0])
-      });
+    if (id.id === undefined) { }
+    else {
+      fetch("https://6wv6aciiid.execute-api.ap-south-1.amazonaws.com/dev_v1/tourist/package_details/" + id.id, requestOptions)
+        .then((responce) => responce.json())
+        .then((data) => {
+          setPlaces(data.banner_imgs)
+          // console.log(data.banner_imgs);
+        });
+    }
   }, [id]);
 
   return (
     <section className="main-slider tour-details-slider">
       <Swiper className="thm-swiper__slider" {...mainSlideOptions}>
         <div className="swiper-wrapper">
-          <SingleSlide key={places?.id} slide={places?.banner_imgs ? { bg: places.banner_imgs[0].image } : ""} />
+          {places.map((image) => (
+            <SingleSlide key={image?.id} slide={image ? { bg: image.image } : ""} />
+          ))}
         </div>
         <div className="main-slider-nav">
           <div

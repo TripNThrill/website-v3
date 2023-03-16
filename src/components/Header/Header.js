@@ -14,9 +14,8 @@ const Header = ({ pageTitle }) => {
 
   return (
     <header
-      className={`main-header${
-        pageTitle === "Home Two" ? " main-header-two" : ""
-      } clearfix`}
+      className={`main-header${pageTitle === "Home Two" ? " main-header-two" : ""
+        } clearfix`}
     >
       <div className="main-header__top">
         <Container>
@@ -57,12 +56,10 @@ const Header = ({ pageTitle }) => {
       <nav
         className={
           scrollTop
-            ? `stricky-header stricked-menu main-menu${
-                pageTitle === "Home Two" ? " main-menu-two" : ""
-              } stricky-fixed slideInDown animated clearfix`
-            : `main-menu${
-                pageTitle === "Home Two" ? " main-menu-two" : ""
-              } slideIn animated clearfix`
+            ? `stricky-header stricked-menu main-menu${pageTitle === "Home Two" ? " main-menu-two" : ""
+            } stricky-fixed slideInDown animated clearfix`
+            : `main-menu${pageTitle === "Home Two" ? " main-menu-two" : ""
+            } slideIn animated clearfix`
         }
       >
         <div
@@ -105,7 +102,7 @@ const Header = ({ pageTitle }) => {
                   style={{ cursor: "pointer" }}
                   className="main-menu__search search-toggler icon-magnifying-glass"
                 ></span>
-                <a href="#" className="main-menu__user icon-avatar"></a>
+                <a href="/login" className="main-menu__user icon-avatar"></a>
               </div>
             </div>
           </Container>

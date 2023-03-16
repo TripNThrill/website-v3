@@ -23,12 +23,17 @@ const TourDetailsLeft = (id) => {
     redirect: 'follow'
   };
 
+  const splitPolicy = (str) => {
+    const a = str.split("_");
+    return a[0].toUpperCase() + " " + a[1].toUpperCase();
+  }
+
   useEffect(() => {
     if (id.id == undefined) {
-      //console.log(id);
+      // console.log(id);
     }
     else {
-      console.log('fetching for' + id.id)
+      // console.log('fetching for' + id.id)
       fetch("https://6wv6aciiid.execute-api.ap-south-1.amazonaws.com/dev_v1/tourist/package_details/" + id.id, requestOptions)
         .then((responce) => {
           console.log(responce);
@@ -50,8 +55,8 @@ const TourDetailsLeft = (id) => {
           <h3 className="tour-details-two-overview__title">Included/Exclude</h3>
           <div className="tour-details-two__overview-bottom-inner">
             <div className="tour-details-two__overview-bottom-left">
-              {/* <ul className="list-unstyled tour-details-two__overview-bottom-list">
-                {places.inclusions.map((inclusion, index) => (
+              <ul className="list-unstyled tour-details-two__overview-bottom-list">
+                {places?.inclusions?.split("✅").map((inclusion, index) => (
                   <li key={index}>
                     <div className="icon">
                       <i className="fa fa-check"></i>
@@ -61,8 +66,8 @@ const TourDetailsLeft = (id) => {
                     </div>
                   </li>
                 ))}
-              </ul> */}
-              {places.inclusions}
+              </ul>
+
             </div>
             {/* <div className="tour-details-two__overview-bottom-right">
               <ul className="list-unstyled tour-details-two__overview-bottom-right-list">
@@ -92,7 +97,7 @@ const TourDetailsLeft = (id) => {
             >
               <div onClick={() => setActive(index)} className="accrodion-title">
                 <h4>
-                  <span>Policy : {index + 1}</span>  {policy}
+                  <span>Policy : {index + 1}</span>  {splitPolicy(policy)}
                 </h4>
               </div>
               <div
@@ -114,6 +119,33 @@ const TourDetailsLeft = (id) => {
           className="tour-details-two__location-map"
           allowFullScreen
         ></iframe>
+      </div>
+
+      <div className="tour-details-two__tour-plan mt-5">
+        <h3 className="tour-details-two__title">Frequently Asked Questions</h3>
+        <div className="accrodion-grp faq-one-accrodion">
+          {places?.faqs?.map((question, index) => (
+            <div
+              className={`accrodion overflow-hidden${active === index ? " active" : ""
+                }`}
+              key={index}
+            >
+              <div onClick={() => setActive(index)} className="accrodion-title">
+                <h4>
+                  <span>Q : {index + 1}</span>  {question.faq}
+                </h4>
+              </div>
+              <div
+                className={`accrodion-content animated ${active === index ? "slideInUp d-block" : "slideInDown d-none"
+                  }`}
+              >
+                <div className="inner">
+                  <p>{question.answer}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
       {/* <div className="tour-details-two__related-tours">
         <h3 className="tour-details-two__title">Category</h3>

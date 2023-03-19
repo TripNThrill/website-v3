@@ -102,7 +102,9 @@ const Header = ({ pageTitle }) => {
                   style={{ cursor: "pointer" }}
                   className="main-menu__search search-toggler icon-magnifying-glass"
                 ></span>
-                <a href="/login" className="main-menu__user icon-avatar"></a>
+                <Link href="/login">
+                  <a className="main-menu__user icon-avatar"></a>
+                </Link>
               </div>
             </div>
           </Container>

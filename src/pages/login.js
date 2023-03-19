@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import token from "@/data/token";
 const { getToken } = token;
 
-function login() {
+function Login() {
 
     const [showOtp, setShowOtp] = useState(false);
     const [number, setNumber] = useState('');
@@ -97,4 +97,4 @@ function login() {
 }
 
 
-export default login
+export default Login

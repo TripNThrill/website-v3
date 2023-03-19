@@ -39,7 +39,7 @@ const ToursListRight = () => {
                   <Carousel autoPlay infiniteLoop>
                     {
                       images.map((i) => (
-                        <div className="">
+                        <div className="" key={i}>
                           <Image src={i} height="250" alt="" />
                         </div>
                       ))
